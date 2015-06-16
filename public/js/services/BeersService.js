@@ -3,21 +3,26 @@ angular.module('BeersService', []).factory('Beer', ['$http', function($http) {
 
     return {
         // call to get all nerds
-        get : function() {
+        getAll : function() {
             console.log("gettingbeers");
             return $http.get('/api/beers');
+        },
+        
+        getOne: function(beerId) {
+            console.log("gettingbeers");
+            return $http.get('/api/beers/' + beerId);
         },
 
 
                 // these will work when more API routes are defined on the Node side of things
         // call to POST and create a new nerd
-        create : function(beer) {
+        add : function(beer) {
             return $http.post('/api/beers', beer);
         },
 
         // call to DELETE a nerd
-        delete : function(id) {
-            return $http.delete('/api/beers/' + id);
+        delete : function(beerId) {
+            return $http.delete('/api/beers/' + beerId);
         }
     }       
 

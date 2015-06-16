@@ -13,6 +13,16 @@
         .when('/beers', {
             templateUrl: 'views/beers.html',
             controller: 'BeersController'
+        })
+        
+        .when('/beers/add', {
+            templateUrl: 'views/addBeer.html',
+            controller: 'AddBeerController'
+        })
+        
+        .when('/beers/:beerId', {
+            templateUrl: 'views/addBeer.html',
+            controller: 'AddBeerController'
         });
 
     $locationProvider.html5Mode(true);

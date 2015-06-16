@@ -2,8 +2,10 @@
 
 <div class="jumbotron text-center">
     <h1>Beers are dozier</h1>
-
+</div>
+<div class="container">
+    <button ng-click="open()" type="submit" class="btn btn-primary"><i class="icon-white icon-plus"></i> Add</button>
     <ul>
-        <li ng-repeat="beer in beers" ng-click=""> {{ beer.name }} </li>
+        <li ng-repeat="beer in beers" ng-click="openSingle(beer.id)"> {{ beer.name }} </li>
     </ul>
 </div>

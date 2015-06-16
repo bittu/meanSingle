@@ -1,0 +1,30 @@
+<div class="modal-header">
+        <h3>User Form</h3>
+    </div>
+    <div class="modal-body">
+        <form name="userForm" class="form-horizontal">
+            <div class="control-group">
+                <label class="control-label" for="name">Name</label>
+                <div class="controls">
+                    <input id="name" name="name" ng-model="formData.name" type="text" placeholder="Name" required=""  ng-class="{error: formData.name.$invalid && !form.name.$pristine}"/>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="name">Type</label>
+                <div class="controls">
+                    <input id="type" name="type" ng-model="formData.type" type="text" placeholder="Type" required=""  ng-class="{error: formData.type.$invalid && !form.type.$pristine}"/>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="name">Quantity</label>
+                <div class="controls">
+                    <input id="quantity" name="quantity" ng-model="formData.quantity" type="number" placeholder="Quantity" required=""  ng-class="{error: formData.quantity.$invalid && !form.quantity.$pristine}"/>
+                </div>
+            </div>
+            
+        </form>
+    </div>
+    <div class="modal-footer">
+        <button ng-click="addBeer()" type="submit" class="btn btn-primary"><i class="icon-white icon-plus"></i> Add</button>
+        <button ng-click="clear()" class="btn">Clear</button>
+    </div>
