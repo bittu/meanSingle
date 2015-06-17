@@ -1,0 +1,3 @@
+define([
+    './BeersService'
+], function () {});

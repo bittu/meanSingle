@@ -51,7 +51,8 @@ exports.putBeer = function(req, res) {
     if (err)
       res.send(err);
 
-    // Update the existing beer quantity
+    beer.name = req.body.name;
+    beer.type = req.body.type;
     beer.quantity = req.body.quantity;
 
     // Save the beer and check for errors
@@ -59,7 +60,7 @@ exports.putBeer = function(req, res) {
       if (err)
         res.send(err);
 
-      res.json(beer);
+      res.json({ message: 'Beer updated to the locker!', data: beer });
     });
   });
 };
