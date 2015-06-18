@@ -1,9 +1,10 @@
 // public/js/controllers/MainCtrl.js
 
-define(['./module'
-], function(controllers) {
-    'use strict';
-    controllers.controller('MainController', [function($scope) {
+define([
+	'angular',
+	'angularRoute'
+], function(angular) {
+    angular.module('MainCtrl', []).controller('MainController', ['$scope',function($scope) {
         $scope.tagline = 'To the moon and back!';   
     }]);
 });

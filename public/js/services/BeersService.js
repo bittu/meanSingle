@@ -1,9 +1,10 @@
 // public/js/services/NerdService.js
 
-define(['./module'
-], function(services) {
-    'use strict';
-    services.factory('Beer', ['$http', function($http) {
+define([
+	'angular',
+	'angularRoute'
+], function(angular) {
+    angular.module('BeersService', []).factory('Beer', ['$http', function($http) {
 
         return {
             // call to get all nerds

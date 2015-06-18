@@ -1,7 +1,11 @@
-define(['./module'
-], function(controllers) {
-    'use strict';
-    controllers.controller('BeersController', [function($scope, Beer, $location) {
+// public/js/controllers/BeersCtrl.js
+
+define([
+	'angular',
+    'angularRoute'
+], function(angular) {
+    
+    angular.module('BeersCtrl', []).controller('BeersController', ['$scope', 'Beer', '$location', function($scope, Beer, $location) {
 
         $scope.formData = {};
         var beers = Beer.getAll();
@@ -21,7 +25,7 @@ define(['./module'
 
     }])
 
-    .controller('BeerController', [function($scope, Beer, action, $routeParams) {
+    .controller('BeerController', ['$scope', 'Beer', 'action', '$routeParams', function($scope, Beer, action, $routeParams) {
 
         $scope.formData = {};
         $scope.edit = false;
@@ -57,7 +61,7 @@ define(['./module'
         };
     }])
 
-    .controller('ShowBeerController', [function($scope, Beer, $location, $routeParams) {
+    .controller('ShowBeerController', ['$scope', 'Beer', '$location', '$routeParams',function($scope, Beer, $location, $routeParams) {
         console.log($location);
         console.log($routeParams);
 

@@ -2,11 +2,12 @@
 
 define([
 	'angular',
-    'angularRoute',
-    './controllers/index',
-    './services/index'
-], function(ng) {
-    'use strict';
+	'angularRoute',
+	'./appRoutes',
+    './controllers/MainCtrl',
+	'./controllers/BeersCtrl',
+    './services/BeersService'
+], function(angular) {
     console.log('app.js');
-    return ng.module('app', ['app.controllers', 'app.services']);
+    return angular.module('sampleApp', ['ngRoute', 'appRoutes', 'MainCtrl', 'BeersCtrl', 'BeersService']);
 });

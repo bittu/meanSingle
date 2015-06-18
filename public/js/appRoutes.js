@@ -1,12 +1,12 @@
 'use strict';
 
 define([
-	'./app'
-], function(app) {
-    'use strict';
+	'angular',
+	'angularRoute'
+], function(angular) {
     console.log('appRoutes.js 1');
-    return app.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
-console.log('appRoutes.js 2');
+    angular.module('appRoutes', []).config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
+
         $routeProvider
 
             // home page
