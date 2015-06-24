@@ -22,10 +22,8 @@ exports.postBeers = function(req, res) {
 
 // Create endpoint /api/beers for GET
 exports.getBeers = function(req, res) {
-    console.log("in getBeers");
   // Use the Beer model to find all beer
   Beer.find(function(err, beers) {
-      console.log("getBeers find done");
     if (err)
       res.send(err);
 

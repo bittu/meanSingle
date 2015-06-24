@@ -8,6 +8,5 @@ define([
 	'./controllers/BeersCtrl',
     './services/BeersService'
 ], function(angular) {
-    console.log('app.js');
     return angular.module('sampleApp', ['ngRoute', 'appRoutes', 'MainCtrl', 'BeersCtrl', 'BeersService']);
 });

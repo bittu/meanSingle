@@ -4,7 +4,6 @@ define([
 	'angular',
 	'angularRoute'
 ], function(angular) {
-    console.log('appRoutes.js 1');
     angular.module('appRoutes', []).config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
 
         $routeProvider
@@ -42,7 +41,8 @@ define([
                 }
             });
 
-        $locationProvider.html5Mode(true);
+        $locationProvider.html5Mode(false);
+        //$locationProvider.hashPrefix();
 
     }]);
 });

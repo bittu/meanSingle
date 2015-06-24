@@ -74,5 +74,12 @@ define([
         $scope.edit = function(beerId) {
             $location.path('/beers/' + beerId + '/edit');
         }
+        
+        $scope.delete = function(beerId) {
+            Beer.delete(beerId).success(function(data){
+                alert(data.message);
+                $location.path('/beers');
+            });
+        }
     }]);
 });
