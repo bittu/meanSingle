@@ -11,13 +11,15 @@ define([
             // home page
             .when('/', {
                 templateUrl: 'views/home.html',
-                controller: 'MainController'
+                controller: 'MainController',
+                access: { requiredAuthentication: true }
             })
 
             // nerds page that will use the NerdController
             .when('/beers', {
                 templateUrl: 'views/beers.html',
-                controller: 'BeersController'
+                controller: 'BeersController',
+                access: { requiredAuthentication: true }
             })
 
             .when('/beers/add', {
@@ -25,12 +27,14 @@ define([
                 controller: 'BeerController',
                 resolve: {
                     action: function(){return 'add';}
-                }
+                },
+                access: { requiredAuthentication: true }
             })
 
             .when('/beers/:beerId', {
                 templateUrl: 'views/showBeer.html',
-                controller: 'ShowBeerController'
+                controller: 'ShowBeerController',
+                access: { requiredAuthentication: true }
             })
 
             .when('/beers/:beerId/edit', {
@@ -38,11 +42,36 @@ define([
                 controller: 'BeerController',
                 resolve: {
                     action: function(){return 'edit';}
-                }
+                },
+                access: { requiredAuthentication: true }
+            }).
+        
+            when('/register', {
+                templateUrl: 'views/register.html',
+                controller: 'AdminUserCtrl'
+            }).
+        
+            when('/login', {
+                templateUrl: 'views/login.html',
+                controller: 'AdminUserCtrl'
+            }).
+        
+            when('/logout', {
+                templateUrl: 'partials/admin.logout.html',
+                controller: 'AdminUserCtrl',
+                access: { requiredAuthentication: true }
+            }).
+        
+            otherwise({
+                redirectTo: '/'
             });
 
-        $locationProvider.html5Mode(false);
+        $locationProvider.html5Mode(true);
         //$locationProvider.hashPrefix();
+        
+        app.config(function ($httpProvider) {
+            $httpProvider.interceptors.push('TokenInterceptor');
+        });
 
     }]);
 });

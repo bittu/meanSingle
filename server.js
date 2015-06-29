@@ -13,6 +13,9 @@ var morgan       = require('morgan');
 var cookieParser = require('cookie-parser');
 var session      = require('express-session');
 
+var jwt = require('jsonwebtoken');  //https://npmjs.org/package/node-jsonwebtoken
+
+
 // configuration ===========================================
 
 // config files
@@ -46,13 +49,12 @@ app.use(methodOverride('X-HTTP-Method-Override'));
 
 app.set('view engine', 'ejs'); // set up ejs for templating
 
-app.set('views', 'app/views');
-
 // required for passport
-app.use(session({ secret: 'ilovescotchscotchyscotchscotch' })); // session secret
+/*app.use(session({ secret: 'ilovescotchscotchyscotchscotch' })); // session secret
 app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
 app.use(flash()); // use connect-flash for flash messages stored in session
+*/
 
 // set the static files location /public/img will be /img for users
 app.use(express.static(__dirname + '/public')); 

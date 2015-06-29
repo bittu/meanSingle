@@ -6,7 +6,11 @@ define([
 	'./appRoutes',
     './controllers/MainCtrl',
 	'./controllers/BeersCtrl',
-    './services/BeersService'
+    './controllers/AdminUserCtrl',
+    './services/BeersService',
+    './services/AuthenticationService',
+    './services/TokenService',
+    './services/UserService',
 ], function(angular) {
-    return angular.module('sampleApp', ['ngRoute', 'appRoutes', 'MainCtrl', 'BeersCtrl', 'BeersService']);
+    return angular.module('sampleApp', ['ngRoute', 'appRoutes', 'MainCtrl', 'BeersCtrl', 'AdminUserCtrl', 'BeersService', 'AuthenticationService', 'TokenService', 'UserService']);
 });

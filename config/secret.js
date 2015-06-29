@@ -1,0 +1,1 @@
+exports.secretToken = 'this is a big secret';
