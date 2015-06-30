@@ -35,4 +35,5 @@ define([
                 return $q.reject(rejection);
             }
         };
+    }]);
 });

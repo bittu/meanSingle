@@ -19,7 +19,6 @@ require([
     'js/app'
 	], function(angular, ngRoute, app) {
         try{
-            console.log('bootstrapping');
             angular.element(document).ready(function() {
                 // bootstrap the app manually
                 angular.bootstrap(document, ['sampleApp']);
