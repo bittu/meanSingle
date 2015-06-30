@@ -1,4 +1,0 @@
-define([
-    './MainCtrl',
-    './BeersCtrl'
-], function () {});
